@@ -1,0 +1,21 @@
+{
+"parameters": [
+		{
+			"name": "ReleaseVersion",
+			"value": "Q22020"
+		},
+		{
+			"name": "AppVersion",
+			"value": "RelQ42020"
+		},
+		
+		{
+			"name": "ReleaseName",
+			"value": "Web Banking"
+		}
+	],
+	"reference": {
+		"fileName": "Taining_Delivery_Template.json",
+		"fileSource": "CDD Training Ops" 
+	}
+}	
