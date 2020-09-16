@@ -2,21 +2,21 @@
 	"objects": [
 		{
 			"application": "Local|MobBank-DB-Access",
-			"name": "${ReleaseVersion}",
+			"name": "master",
 			"kind": "ApplicationVersion"
 		},
 		{
 			"application": "Local|MobBank-GUI",
-			"name": "${ReleaseVersion}",
+			"name": "master",
 			"kind": "ApplicationVersion"
 		},
 		{
 			"application": "Local|MobBank-Server",
-			"name": "${ReleaseVersion}",
+			"name": "master",
 			"kind": "ApplicationVersion"
 		},
 		{
-			"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}",
+			"applicationVersion": "Local|MobBank-GUI/master",
 			"name": "Cumber Ruby",
 			"kind": "TestSource",
 			"plugin": "Cucumber Ruby/1.4",
@@ -31,7 +31,7 @@
 			]
 		},
 		{
-			"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}",
+			"applicationVersion": "Local|MobBank-GUI/master",
 			"name": "Robot",
 			"kind": "TestSource",
 			"plugin": "Robot Framework/1.7",
@@ -45,7 +45,7 @@
 			]
 		},
 		{
-			"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}",
+			"applicationVersion": "Local|MobBank-Server/master",
 			"name": "Cumber Ruby",
 			"kind": "TestSource",
 			"plugin": "Cucumber Ruby/1.4",
@@ -60,7 +60,7 @@
 			]
 		},
 		{
-			"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}",
+			"applicationVersion": "Local|MobBank-Server/master",
 			"name": "Robot",
 			"kind": "TestSource",
 			"plugin": "Robot Framework/1.7",
@@ -75,9 +75,9 @@
 		},
 		{
 			"applicationVersions": [
-				"Local|MobBank-DB-Access/${ReleaseVersion}",
-				"Local|MobBank-GUI/${ReleaseVersion}",
-				"Local|MobBank-Server/${ReleaseVersion}"
+				"Local|MobBank-DB-Access/master",
+				"Local|MobBank-GUI/master",
+				"Local|MobBank-Server/master"
 			],
 			"memberParties": [
 				"BuildNotification"
@@ -282,7 +282,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -306,7 +306,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -332,7 +332,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -356,7 +356,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -385,7 +385,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -409,7 +409,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -485,13 +485,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -532,7 +532,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -555,7 +555,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -578,7 +578,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -601,7 +601,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -624,7 +624,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -647,7 +647,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -681,13 +681,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -711,13 +711,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -758,7 +758,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -781,7 +781,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -804,7 +804,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -827,7 +827,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -850,7 +850,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -873,7 +873,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -907,13 +907,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -937,13 +937,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -984,7 +984,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -1007,7 +1007,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1030,7 +1030,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1053,7 +1053,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1076,7 +1076,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1099,7 +1099,7 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1133,13 +1133,13 @@
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/master"
 				},
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -1172,6 +1172,6 @@
 				"type": "Defect,User Story"
 			},
 			"type": "Add Content"
-		}
+		}	
 	]
 }
