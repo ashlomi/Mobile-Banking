@@ -499,7 +499,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Open SNOW Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -517,7 +517,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Wait for SNOW Approval",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -698,7 +698,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Close SNOW change Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -725,7 +725,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Open SNOW Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -743,7 +743,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Wait for SNOW Approval",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -924,7 +924,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Close SNOW change Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -951,7 +951,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Open SNOW Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -969,7 +969,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Wait for SNOW Approval",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
@@ -1150,7 +1150,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Close SNOW change Ticket",
 			"kind": "Task",
-			"plugin": "ServiceNow/2.2",
+			"plugin": "ServiceNow/2.3",
 			"endpoint": "Mobile SNOW ven01182 - Madrid",
 			"parameters": {
 				"changeRequestId": "%changeTicketNumber%",
