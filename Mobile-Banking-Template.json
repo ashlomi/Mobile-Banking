@@ -293,7 +293,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-GUI.last_successful_change%",
@@ -343,7 +343,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-Server.last_successful_change%",
@@ -396,7 +396,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-DB-Access.last_successful_change%",
@@ -543,7 +543,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-GUI.last_successful_change%",
@@ -589,7 +589,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-Server.last_successful_change%",
@@ -635,7 +635,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-DB-Access.last_successful_change%",
@@ -769,7 +769,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-GUI.last_successful_change%",
@@ -815,7 +815,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-Server.last_successful_change%",
@@ -861,7 +861,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-DB-Access.last_successful_change%",
@@ -995,7 +995,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-GUI.last_successful_change%",
@@ -1041,7 +1041,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-Server.last_successful_change%",
@@ -1087,7 +1087,7 @@
 			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
-			"plugin": "Ansible Tower/2.1",
+			"plugin": "Ansible Tower/2.3",
 			"endpoint": "Mobile Ansible-341",
 			"parameters": {
 				"buildOrChangeId": "%MobBank-DB-Access.last_successful_change%",
