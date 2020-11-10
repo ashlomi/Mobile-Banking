@@ -1,88 +1,16 @@
 {
 	"objects": [
-		{
-			"application": "Local|MobBank-DB-Access",
-			"name": "${ReleaseVersion}",
-			"kind": "ApplicationVersion"
-		},
-		{
-			"application": "Local|MobBank-GUI",
-			"name": "${ReleaseVersion}",
-			"kind": "ApplicationVersion"
-		},
-		{
-			"application": "Local|MobBank-Server",
-			"name": "${ReleaseVersion}",
-			"kind": "ApplicationVersion"
-		},
-		{
-			"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}",
-			"name": "Cumber Ruby",
-			"kind": "TestSource",
-			"plugin": "Cucumber Ruby/1.4",
-			"endpoint": "Cucumber-Ruby-anumsh",
-			"parameters": {
-				"rootFolder": "/cucumberRubySample/",
-				"branch": "master"
-			},
-			"type": "ImportCucumberFeatures",
-			"tags": [
-				"Cucmber-Ruby-ALL"
-			]
-		},
-		{
-			"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}",
-			"name": "Robot",
-			"kind": "TestSource",
-			"plugin": "Robot Framework/1.7",
-			"endpoint": "Robot",
-			"parameters": {
-				"branch": "master"
-			},
-			"type": "Import Test Suites",
-			"tags": [
-				"Robot-All"
-			]
-		},
-		{
-			"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}",
-			"name": "Cumber Ruby",
-			"kind": "TestSource",
-			"plugin": "Cucumber Ruby/1.4",
-			"endpoint": "Cucumber-Ruby-anumsh",
-			"parameters": {
-				"rootFolder": "/cucumberRubySample/",
-				"branch": "master"
-			},
-			"type": "ImportCucumberFeatures",
-			"tags": [
-				"Cucmber-Ruby-ALL"
-			]
-		},
-		{
-			"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}",
-			"name": "Robot",
-			"kind": "TestSource",
-			"plugin": "Robot Framework/1.7",
-			"endpoint": "Robot",
-			"parameters": {
-				"branch": "master"
-			},
-			"type": "Import Test Suites",
-			"tags": [
-				"Robot-All"
-			]
-		},
+		
 		{
 			"applicationVersions": [
-				"Local|MobBank-DB-Access/${ReleaseVersion}",
-				"Local|MobBank-GUI/${ReleaseVersion}",
-				"Local|MobBank-Server/${ReleaseVersion}"
+				"Local|MobBank-DB-Access/Template",
+				"Local|MobBank-GUI/Template",
+				"Local|MobBank-Server/Template"
 			],
 			"memberParties": [
 				"BuildNotification"
 			],
-			"isReplaceApplicationVersionOnChangeNotification": true,
+			"isReplaceApplicationVersionOnChangeNotification": false,
 			"markAsDonePhaseName": "",
 			"runOnCreation": false,
 			"version": "${ReleaseVersion}",
@@ -111,8 +39,8 @@
 		},
 		{
 			"isProduction": false,
-			"releaseTokenTemplate": "Token-Release-1",
 			"release": "Mobile-Banking/${ReleaseVersion}",
+			"releaseTokenTemplate": "Token-Release-1",
 			"scope": "PHASE_SCOPE",
 			"value": "",
 			"kind": "ReleaseToken"
@@ -121,7 +49,7 @@
 			"isProduction": false,
 			"release": "Mobile-Banking/${ReleaseVersion}",
 			"scope": "RELEASE_SCOPE",
-			"value": "CHG0030881",
+			"value": "CHG0030762",
 			"name": "changeTicketNumber",
 			"kind": "ReleaseToken"
 		},
@@ -182,13 +110,13 @@
 			"kind": "ReleaseToken"
 		},
 		{
-			"approvalGate": "AUTOMATIC",
-			"skipTasksWithUnchangedApplications": true,
-			"isApprovalRequired": false,
-			"release": "Mobile-Banking/${ReleaseVersion}",
 			"environments": [
 				"Mob-CI"
 			],
+			"release": "Mobile-Banking/${ReleaseVersion}",
+			"approvalGate": "AUTOMATIC",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
 			"name": "CI",
 			"kind": "Phase",
 			"ownerParties": [
@@ -196,101 +124,46 @@
 			]
 		},
 		{
-			"approvalGate": "ON_FAILURE",
-			"skipTasksWithUnchangedApplications": false,
-			"isApprovalRequired": false,
-			"onFailureFailedPhase": "CI",
-			"release": "Mobile-Banking/${ReleaseVersion}",
-			"environments": [
-				"Mob-CI"
-			],
-			"name": "CI Rollback",
-			"kind": "Phase"
-		},
-		{
-			"plannedStartDate": "15/09/2021 20:18:00 Z",
-			"plannedEndDate": "15/09/2021 20:50:00 Z",
-			"approvalGate": "SCHEDULED",
-			"skipTasksWithUnchangedApplications": true,
-			"isApprovalRequired": false,
-			"recurrence": {
-				"timeZoneId": "Asia/Jerusalem",
-				"recurrencePattern": "DAILY"
-			},
-			"previousPhase": "CI",
-			"release": "Mobile-Banking/${ReleaseVersion}",
 			"environments": [
 				"Mob-UAT"
 			],
-			"name": "UAT",
-			"kind": "Phase"
-		},
-		{
-			"approvalGate": "MANUAL",
-			"skipTasksWithUnchangedApplications": true,
-			"isApprovalRequired": false,
-			"previousPhase": "UAT",
 			"release": "Mobile-Banking/${ReleaseVersion}",
-			"environments": [
-				"Mob-Prep"
-			],
-			"name": "Verify",
-			"kind": "Phase"
-		},
-		{
-			"approvalGate": "ON_FAILURE",
+			"approvalGate": "AUTOMATIC",
 			"skipTasksWithUnchangedApplications": false,
 			"isApprovalRequired": false,
-			"onFailureFailedPhase": "Verify",
-			"release": "Mobile-Banking/${ReleaseVersion}",
-			"environments": [
-				"Mob-Prep"
-			],
-			"name": "RollBack",
-			"kind": "Phase"
+			"previousPhase": "CI",
+			"name": "UAT",
+			"kind": "Phase",
+			"ownerParties": [
+				"BuildNotification"
+			]
 		},
 		{
-			"approvalGate": "MANUAL",
-			"skipTasksWithUnchangedApplications": true,
-			"isApprovalRequired": false,
-			"previousPhase": "Verify",
-			"release": "Mobile-Banking/${ReleaseVersion}",
 			"environments": [
 				"Mob-Prod"
 			],
+			"release": "Mobile-Banking/${ReleaseVersion}",
+			"approvalGate": "AUTOMATIC",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"previousPhase": "UAT",
 			"name": "Production",
-			"kind": "Phase"
+			"kind": "Phase",
+			"ownerParties": [
+				"BuildNotification"
+			]
 		},
 		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
 			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
-			"name": "Check Security Scan",
-			"kind": "Task",
-			"plugin": "SonarQube/1.1",
-			"endpoint": "Mobile Sonar",
-			"parameters": {
-				"qualityGate": "%qualityGate%",
-				"projectKey": "be.yildiz-games:feature-city-client",
-				"failOnWarning": "false"
-			},
-			"type": "Check Project Status"
-		},
-		{
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
 			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Check Security Scan"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -302,11 +175,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -314,25 +188,26 @@
 			"previousTasks": [
 				"Deploy Mobile-GUI"
 			],
-			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Run Tests - GUI",
 			"kind": "Task",
-			"plugin": "ADAPTIVE TESTING/1.1.1",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
 				"changeId": "%MobBank-GUI.last_successful_change%",
 				"runOnlySubset": "true"
 			},
-			"type": "Run Adaptive Testing"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"buildNumber": "%MobBank-Server.last_successful_change%",
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -340,7 +215,6 @@
 			"previousTasks": [
 				"Run Tests - GUI"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -352,11 +226,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -364,28 +239,29 @@
 			"previousTasks": [
 				"Deploy Mobile-Server"
 			],
-			"tags": [
-				"Rob-P",
-				"Robot-All",
-				"Robot All",
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Run Tests - Server",
 			"kind": "Task",
-			"plugin": "ADAPTIVE TESTING/1.1.1",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
 				"changeId": "%MobBank-Server.last_successful_change%",
 				"runOnlySubset": "true"
 			},
-			"type": "Run Adaptive Testing"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot All",
+				"Robot-P",
+				"Cucmber-Ruby-ALL",
+				"Robot-All",
+				"Rob-P"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -393,7 +269,6 @@
 			"previousTasks": [
 				"Run Tests - Server"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -405,11 +280,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -417,130 +293,30 @@
 			"previousTasks": [
 				"Deploy Mobile-DB"
 			],
-			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI",
 			"name": "Run Tests - DB Sccess",
 			"kind": "Task",
-			"plugin": "ADAPTIVE TESTING/1.1.1",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
 				"changeId": "%MobBank-DB-Access.last_successful_change%",
 				"runOnlySubset": "true"
 			},
-			"type": "Run Adaptive Testing"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI Rollback",
-			"name": "Approve to Run",
-			"kind": "Task"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Approve to Run"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI Rollback",
-			"name": "Send Message",
-			"kind": "Task",
-			"plugin": "Email/1.3",
-			"endpoint": "Mobile Email turboSMTP",
-			"parameters": {
-				"senderDisplayName": "Assaf Shlomi",
-				"subject": "Attention!! 00-TV-Sutern-VP FY19 - Dev Phase failed",
-				"fromAddress": "assaf.shlomi@broadcom.com",
-				"to": "ashlomitest@mail.com",
-				"body": "Attention!! 00-TV-Sutern-VP FY19 - Dev Phase failed"
-			},
-			"type": "Send Email"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/CI Rollback",
-			"name": "Rollback",
-			"kind": "Task",
-			"plugin": "TestTask/1.0",
-			"endpoint": "Mobile RP Test",
-			"parameters": {
-				"finite-status": "Done",
-				"detailed-status": "Done",
-				"shall-fail": "false",
-				"number-iterations": "1",
-				"status": "Success"
-			},
-			"type": "Run Test"
-		},
-		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Open SNOW Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"shortDescription": "Deploy release to production %assafTest%"
-			},
-			"type": "Create Change Request"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Open SNOW Ticket"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Wait for SNOW Approval",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"pollInterval": "15",
-				"statusField": "State",
-				"requiredStatus": "Work in Progress",
-				"ticketType": "Change Request"
-			},
-			"type": "Wait For Approval"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"buildNumber": "%MobBank-GUI.last_successful_change%",
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
 			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Wait for SNOW Approval"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -552,10 +328,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"buildNumber": "%MobBank-GUI.last_successful_change%",
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -563,30 +341,33 @@
 			"previousTasks": [
 				"Deploy Mobile-GUI"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Send Message -GUI",
+			"name": "Run Tests - GUI",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "Build %MobBank-GUI.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
+				"changeId": "%MobBank-GUI.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"buildNumber": "%MobBank-Server.last_successful_change%",
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
 			"isSkipTaskOnFailure": false,
 			"previousTasks": [
-				"Send Message -GUI"
+				"Run Tests - GUI"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -598,10 +379,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"buildNumber": "%MobBank-Server.last_successful_change%",
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -609,30 +392,36 @@
 			"previousTasks": [
 				"Deploy Mobile-Server"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Send Message - Server",
+			"name": "Run Tests - Server",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "build %MobBank-Server.last_successful_change% Deployed to UAT with success %EnvironmentToken/SUT-IP%",
-				"username": "CDDirector"
+				"changeId": "%MobBank-Server.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot All",
+				"Robot-P",
+				"Cucmber-Ruby-ALL",
+				"Robot-All",
+				"Rob-P"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
 			"isSkipTaskOnFailure": false,
 			"previousTasks": [
-				"Send Message - Server"
+				"Run Tests - Server"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -644,10 +433,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -655,118 +446,30 @@
 			"previousTasks": [
 				"Deploy Mobile-DB"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Send Message - DB",
+			"name": "Run Tests - DB Sccess",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "build %MobBank-DB-Access.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
+				"changeId": "%MobBank-DB-Access.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message - DB"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Run Manual Tests",
-			"kind": "Task"
-		},
-		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Run Manual Tests"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/UAT",
-			"name": "Close SNOW change Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"changeRequestContent": "{\"state\":\"closed complete\"}",
-				"ticketType": "Change Request"
-			},
-			"type": "Update Ticket"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Open SNOW Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"shortDescription": "Deploy release to production %assafTest%"
-			},
-			"type": "Create Change Request"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Open SNOW Ticket"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Wait for SNOW Approval",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"pollInterval": "10",
-				"statusField": "State",
-				"requiredStatus": "Work in Progress",
-				"ticketType": "Change Request"
-			},
-			"type": "Wait For Approval"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"buildNumber": "%MobBank-GUI.last_successful_change%",
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
 			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Wait for SNOW Approval"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-GUI",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -778,10 +481,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
+					"buildNumber": "%MobBank-GUI.last_successful_change%",
+					"applicationVersion": "Local|MobBank-GUI/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -789,30 +494,33 @@
 			"previousTasks": [
 				"Deploy Mobile-GUI"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Send Message -GUI",
+			"name": "Run Tests - GUI",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "Build %MobBank-GUI.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
+				"changeId": "%MobBank-GUI.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"buildNumber": "%MobBank-Server.last_successful_change%",
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
 			"isSkipTaskOnFailure": false,
 			"previousTasks": [
-				"Send Message -GUI"
+				"Run Tests - GUI"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-Server",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -824,10 +532,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
+					"buildNumber": "%MobBank-Server.last_successful_change%",
+					"applicationVersion": "Local|MobBank-Server/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -835,30 +545,36 @@
 			"previousTasks": [
 				"Deploy Mobile-Server"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Send Message - Server",
+			"name": "Run Tests - Server",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "build %MobBank-Server.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
+				"changeId": "%MobBank-Server.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot All",
+				"Robot-P",
+				"Cucmber-Ruby-ALL",
+				"Robot-All",
+				"Rob-P"
+			]
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
 			"isSkipTaskOnFailure": false,
 			"previousTasks": [
-				"Send Message - Server"
+				"Run Tests - Server"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
 			"name": "Deploy Mobile-DB",
 			"kind": "Task",
 			"plugin": "Ansible Tower/2.3",
@@ -870,10 +586,12 @@
 			"type": "Run Job Template"
 		},
 		{
+			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
 			"isDisabled": false,
 			"applicationVersionBuilds": [
 				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
+					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
+					"applicationVersion": "Local|MobBank-DB-Access/Template"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -881,283 +599,18 @@
 			"previousTasks": [
 				"Deploy Mobile-DB"
 			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Send Message - DB",
+			"name": "Run Tests - DB Sccess",
 			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
+			"plugin": "ADAPTIVE TESTING/1.1.1|2",
 			"parameters": {
-				"message": "build %MobBank-DB-Access.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
+				"changeId": "%MobBank-DB-Access.last_successful_change%",
+				"runOnlySubset": "true"
 			},
-			"type": "Post message"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message - DB"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Manual verification of the environment.",
-			"kind": "Task"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Manual verification of the environment."
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Verify",
-			"name": "Close SNOW change Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"changeRequestContent": "{\"state\":\"closed complete\"}",
-				"ticketType": "Change Request"
-			},
-			"type": "Update Ticket"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Open SNOW Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"shortDescription": "Deploy release to production %assafTest%"
-			},
-			"type": "Create Change Request"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Open SNOW Ticket"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Wait for SNOW Approval",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"pollInterval": "10",
-				"statusField": "State",
-				"requiredStatus": "Work in Progress",
-				"ticketType": "Change Request"
-			},
-			"type": "Wait For Approval"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": false,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Wait for SNOW Approval"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Deploy Mobile-GUI",
-			"kind": "Task",
-			"plugin": "Ansible Tower/2.3",
-			"endpoint": "Mobile Ansible-341",
-			"parameters": {
-				"buildOrChangeId": "%MobBank-GUI.last_successful_change%",
-				"templateName": "Deploy-All"
-			},
-			"type": "Run Job Template"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Deploy Mobile-GUI"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Send Message -GUI",
-			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
-			"parameters": {
-				"message": "Build %MobBank-GUI.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
-			},
-			"type": "Post message"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message -GUI"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Deploy Mobile-Server",
-			"kind": "Task",
-			"plugin": "Ansible Tower/2.3",
-			"endpoint": "Mobile Ansible-341",
-			"parameters": {
-				"buildOrChangeId": "%MobBank-Server.last_successful_change%",
-				"templateName": "Deploy-All"
-			},
-			"type": "Run Job Template"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Deploy Mobile-Server"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Send Message - Server",
-			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
-			"parameters": {
-				"message": "build %MobBank-Server.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
-			},
-			"type": "Post message"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message - Server"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Deploy Mobile-DB",
-			"kind": "Task",
-			"plugin": "Ansible Tower/2.3",
-			"endpoint": "Mobile Ansible-341",
-			"parameters": {
-				"buildOrChangeId": "%MobBank-DB-Access.last_successful_change%",
-				"templateName": "Deploy-All"
-			},
-			"type": "Run Job Template"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Deploy Mobile-DB"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Send Message - DB",
-			"kind": "Task",
-			"plugin": "Slack/1.1",
-			"endpoint": "Mobile Team Slack",
-			"parameters": {
-				"message": "build %MobBank-DB-Access.last_successful_change% Deployed to UAT with success",
-				"username": "CDDirector"
-			},
-			"type": "Post message"
-		},
-		{
-			"isDisabled": false,
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Send Message - DB"
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Manual verification of the environment.",
-			"kind": "Task"
-		},
-		{
-			"isDisabled": false,
-			"applicationVersionBuilds": [
-				{
-					"applicationVersion": "Local|MobBank-DB-Access/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-Server/${ReleaseVersion}"
-				},
-				{
-					"applicationVersion": "Local|MobBank-GUI/${ReleaseVersion}"
-				}
-			],
-			"isOnFailurePhaseEnabled": true,
-			"isSkipTaskOnFailure": false,
-			"previousTasks": [
-				"Manual verification of the environment."
-			],
-			"phase": "Mobile-Banking/${ReleaseVersion}/Production",
-			"name": "Close SNOW change Ticket",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.3",
-			"endpoint": "Mobile SNOW ven01182 - Madrid",
-			"parameters": {
-				"changeRequestId": "%changeTicketNumber%",
-				"changeRequestContent": "{\"state\":\"closed complete\"}",
-				"ticketType": "Change Request"
-			},
-			"type": "Update Ticket"
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Robot-P",
+				"Cucmber-Ruby-ALL"
+			]
 		},
 		{
 			"release": "Mobile-Banking/${ReleaseVersion}",
