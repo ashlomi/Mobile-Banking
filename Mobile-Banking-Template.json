@@ -3,9 +3,9 @@
 		
 		{
 			"applicationVersions": [
-				"Local|MobBank-DB-Access/Template",
-				"Local|MobBank-GUI/Template",
-				"Local|MobBank-Server/Template"
+				"Local|MobBank-DB-Access/master",
+				"Local|MobBank-GUI/master",
+				"Local|MobBank-Server/master"
 			],
 			"memberParties": [
 				"BuildNotification"
@@ -159,7 +159,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -180,7 +180,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -207,7 +207,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -231,7 +231,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -261,7 +261,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -285,7 +285,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -312,7 +312,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -333,7 +333,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -360,7 +360,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -384,7 +384,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -414,7 +414,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -438,7 +438,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -465,7 +465,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": false,
@@ -486,7 +486,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-GUI.last_successful_change%",
-					"applicationVersion": "Local|MobBank-GUI/Template"
+					"applicationVersion": "Local|MobBank-GUI/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -513,7 +513,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -537,7 +537,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-Server.last_successful_change%",
-					"applicationVersion": "Local|MobBank-Server/Template"
+					"applicationVersion": "Local|MobBank-Server/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -567,7 +567,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
@@ -591,7 +591,7 @@
 			"applicationVersionBuilds": [
 				{
 					"buildNumber": "%MobBank-DB-Access.last_successful_change%",
-					"applicationVersion": "Local|MobBank-DB-Access/Template"
+					"applicationVersion": "Local|MobBank-DB-Access/master"
 				}
 			],
 			"isOnFailurePhaseEnabled": true,
