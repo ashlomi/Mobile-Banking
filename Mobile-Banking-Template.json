@@ -10,7 +10,7 @@
 			"memberParties": [
 				"BuildNotification"
 			],
-			"isReplaceApplicationVersionOnChangeNotification": false,
+			"isReplaceApplicationVersionOnChangeNotification": true,
 			"markAsDonePhaseName": "",
 			"runOnCreation": false,
 			"version": "${ReleaseVersion}",
