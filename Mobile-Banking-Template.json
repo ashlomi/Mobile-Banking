@@ -197,8 +197,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
@@ -248,11 +247,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot All",
-				"Robot-P",
-				"Cucmber-Ruby-ALL",
-				"Robot-All",
-				"Rob-P"
+				"All"
 			]
 		},
 		{
@@ -302,8 +297,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
@@ -350,8 +344,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
@@ -401,11 +394,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot All",
-				"Robot-P",
-				"Cucmber-Ruby-ALL",
-				"Robot-All",
-				"Rob-P"
+				"All"
 			]
 		},
 		{
@@ -455,8 +444,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
@@ -503,8 +491,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
@@ -554,11 +541,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot All",
-				"Robot-P",
-				"Cucmber-Ruby-ALL",
-				"Robot-All",
-				"Rob-P"
+				"All"
 			]
 		},
 		{
@@ -608,8 +591,7 @@
 			},
 			"type": "Run Adaptive Testing",
 			"tags": [
-				"Robot-P",
-				"Cucmber-Ruby-ALL"
+				"All"
 			]
 		},
 		{
