@@ -2,7 +2,7 @@
 # performYumUpdateRebootServer.yml
 # performs yum update and reboots server
 - name: perform yum update / reboot server
-  hosts: frkqa000838.bpc.broadcom.net
+  hosts: my_hosts
   remote_user: lnxcfg
   become: true
   become_method: sudo
